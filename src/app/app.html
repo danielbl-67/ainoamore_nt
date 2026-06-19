@@ -1,0 +1,33 @@
+<header class="navbar">
+  <div class="logo">Ainoamore_nt</div>
+  <nav>
+    <a href="#sobre-mi">Sobre Mí</a>
+    <a href="#tiktok">Comunidad</a>
+    <a href="#recetas">Recetas</a>
+    <a href="#blog">Blog</a>
+    <button class="btn-primary" (click)="agendarCita()">Agendar Cita</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="sobre-mi">
+    <div class="hero-content">
+      <h1>Transforma tu cuerpo y nutre tu mente</h1>
+      <p>Asesoramiento personalizado en nutrición y entrenamiento para alcanzar tu mejor versión sin restricciones.</p>
+      <button class="btn-primary" (click)="agendarCita()">Empieza Hoy</button>
+    </div>
+    <div class="hero-image">
+      <div class="image-placeholder"></div>
+    </div>
+  </section>
+
+  <app-tiktok-carrusel></app-tiktok-carrusel>
+
+  <app-recetas></app-recetas>
+
+  <app-blog></app-blog>
+</main>
+
+<footer>
+  <p>&copy; 2026 - Diseñado con enfoque de diseño minimalista para tu bienestar.</p>
+</footer>

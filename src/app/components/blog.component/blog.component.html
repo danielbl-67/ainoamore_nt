@@ -1,0 +1,25 @@
+<section class="blog-section" id="blog">
+  <h2>Últimos Artículos del Blog</h2>
+  <p>Consejos científicos sobre nutrición, entrenamiento y mentalidad para optimizar tus resultados.</p>
+  
+  <div class="grid-container">
+    @for (post of blogPosts; track post.id) {
+      <article class="card">
+        <div class="card-image-wrapper">
+          <img [src]="post.imagen" [alt]="post.titulo">
+          <span class="tag-categoria">{{ post.categoria }}</span>
+        </div>
+
+        <div class="card-content">
+          <span class="date">{{ post.fecha }}</span>
+          <h3>{{ post.titulo }}</h3>
+          <p>{{ post.extracto }}</p>
+          
+          <button class="link-more" (click)="leerArticulo(post.id)">
+            Leer artículo completo &rarr;
+          </button>
+        </div>
+      </article>
+    }
+  </div>
+</section>

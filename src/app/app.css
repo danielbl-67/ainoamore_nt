@@ -1,0 +1,132 @@
+/* VARIABLES CON TU PALETA REAL */
+:root {
+  --color-fondo: #F5F1EB;       /* Beis de fondo */
+  --color-texto: #1A1A1A;       /* Primer plano / Texto oscuro */
+  --color-tarjeta: #F8F6F1;     /* Fondo de bloques y tarjetas */
+  --color-rosa: #E6D1D1;        /* Color secundario / Detalles */
+  --color-rosa-dark: #D4BDBD;   /* Rosa un poco más oscuro para efectos hover */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: var(--color-texto);
+}
+
+body {
+  background-color: var(--color-fondo);
+}
+
+/* MENÚ DE NAVEGACIÓN */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  background-color: rgba(245, 241, 235, 0.85); /* Efecto translúcido */
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.05);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 1.2rem;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* BOTONES MODERNOS */
+.btn-primary {
+  background-color: var(--color-rosa);
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-rosa-dark);
+  transform: translateY(-1px);
+}
+
+/* HERO / BIENVENIDA */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 6rem 5%;
+  gap: 4rem;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 480px;
+  background-color: var(--color-rosa);
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(26, 26, 26, 0.04);
+}
+
+/* SECCIONES GENERALES */
+section {
+  padding: 5rem 5%;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+section > p {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 3.5rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  background-color: var(--color-tarjeta);
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-top: 1px solid rgba(26, 26, 26, 0.05);
+}
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 2rem;}
+  .navbar { flex-direction: column; gap: 1rem; }
+}
