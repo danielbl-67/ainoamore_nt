@@ -1,10 +1,10 @@
 <section class="recipes-section" id="recetas">
   <h2>Recetas Saludables & Deliciosas</h2>
-  <p>Comer sano no tiene por qué ser aburrido. Ideas rápidas calculadas por macros.</p>
+  <p>Comer bien sin complicaciones alimentarias. Calculadas por macros nutricionales.</p>
   
   <div class="grid-container">
     @for (recipe of recipes; track recipe.title) {
-      <div class="card animate-card">
+      <div class="card">
         <img [src]="recipe.image" [alt]="recipe.title">
         <div class="card-content">
           <span class="tag">{{ recipe.category }}</span>

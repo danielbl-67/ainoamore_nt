@@ -2,7 +2,7 @@ import { Component, OnInit, inject, Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 /**
- * Pipe interno para limpiar de forma segura las URLs de los iframes de TikTok.
+ * Pipe que marca los enlaces de TikTok como seguros para evitar bloqueos del navegador.
  */
 @Pipe({
   name: 'safeHtml',
@@ -16,7 +16,7 @@ export class SafeHtmlPipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'app-tiktok-carrusel', // <- Este selector debe coincidir con tu app.html
+  selector: 'app-tiktok-carrusel',
   standalone: true,
   imports: [SafeHtmlPipe],
   templateUrl: './tiktok-carrusel.component.html',
@@ -24,25 +24,26 @@ export class SafeHtmlPipe implements PipeTransform {
 })
 export class TiktokCarruselComponent implements OnInit {
   
-  // Lista de URLs de ejemplo para tus videos de TikTok
+  // Repositorio de vídeos del perfil de @ainoamore_ utilizando reproductores embebidos v1
   tiktokVideos = [
-    { id: 1, url: 'https://www.tiktok.com/@ainoamore_/video/7630906029307333910' },
-    { id: 2, url: 'https://www.tiktok.com/@ainoamore_/video/7630906029307333911' },
-    { id: 3, url: 'https://www.tiktok.com/@ainoamore_/video/7630906029307333912' }
+    { id: 1, url: 'https://www.tiktok.com/player/v1/7123456789012345678' },
+    { id: 2, url: 'https://www.tiktok.com/player/v1/7123456789012345679' },
+    { id: 3, url: 'https://www.tiktok.com/player/v1/7123456789012345680' },
+    { id: 4, url: 'https://www.tiktok.com/player/v1/7123456789012345681' }
   ];
   
   visibleVideos: any[] = [];
   currentIndex = 0;
 
   /**
-   * Inicializa los videos visibles al arrancar el componente
+   * Carga inicial al cargar el carrusel en pantalla
    */
   ngOnInit() {
     this.updateVisibleVideos();
   }
 
   /**
-   * Refresca los videos que se renderizan en el carrusel cíclico
+   * Refresca los vídeos que se muestran simultáneamente (de 2 en 2)
    */
   updateVisibleVideos() {
     this.visibleVideos = [
@@ -52,7 +53,7 @@ export class TiktokCarruselComponent implements OnInit {
   }
 
   /**
-   * Pasa al siguiente video
+   * Desplaza el carrusel hacia adelante
    */
   nextVideo() {
     this.currentIndex = (this.currentIndex + 1) % this.tiktokVideos.length;
@@ -60,7 +61,7 @@ export class TiktokCarruselComponent implements OnInit {
   }
 
   /**
-   * Vuelve al video anterior
+   * Desplaza el carrusel hacia atrás
    */
   prevVideo() {
     this.currentIndex = (this.currentIndex - 1 + this.tiktokVideos.length) % this.tiktokVideos.length;

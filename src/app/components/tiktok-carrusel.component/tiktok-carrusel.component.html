@@ -1,9 +1,9 @@
 <section class="tiktok-section" id="tiktok">
-  <h2>Tips Diarios en TikTok</h2>
-  <p>Consejos rápidos de entrenamiento y mitos de nutrición desmentidos.</p>
+  <h2>Comunidad & Tips en Redes</h2>
+  <p>Sigue los consejos diarios de entrenamiento y recetas de <strong>@ainoamore_</strong></p>
   
   <div class="carousel-container">
-    <button class="carousel-btn prev" (click)="prevVideo()" aria-label="Video anterior">&#10094;</button>
+    <button class="carousel-btn prev" (click)="prevVideo()">&#10094;</button>
     
     <div class="carousel-track">
       @for (video of visibleVideos; track video.id) {
@@ -13,6 +13,6 @@
       }
     </div>
 
-    <button class="carousel-btn next" (click)="nextVideo()" aria-label="Siguiente video">&#10095;</button>
+    <button class="carousel-btn next" (click)="nextVideo()">&#10095;</button>
   </div>
 </section>
