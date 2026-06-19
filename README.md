@@ -1,59 +1,46 @@
-# Nutricionista
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.0.0.
+# 🏋️‍♀️ Web Profesional - Ainoa More (Nutricionista & Entrenadora Personal)
 
-## Development server
+¡Bienvenido/a al repositorio de la plataforma web oficial de **@ainoamore_**! Este proyecto consiste en una Single Page Application (SPA) moderna, minimalista y con un enfoque completamente *aesthetic*, diseñada a medida para cubrir las necesidades de un perfil profesional del sector del fitness, la salud y el bienestar.
 
-To start a local development server, run:
+La interfaz utiliza una paleta cromática muy cuidada basada en tonos **Beis Claro** (`#F5F1EB`) y **Rosa Pastel/Maquillaje** (`#E6D1D1`), logrando transmitir calma, profesionalidad, salud y cercanía.
 
-```bash
-ng serve
-```
+---
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Características Clave
 
-## Code scaffolding
+* **⚡ Arquitectura Angular Líder:** Desarrollada bajo componentes autónomos (*Standalone Components*) optimizados para la máxima velocidad y escalabilidad.
+* **📱 Carrusel de TikTok Integrado:** Un módulo rotativo interactivo que consume directamente los IDs de los vídeos reales de entrenamiento, cambios físicos y asesorías del perfil oficial de Ainoa.
+* **🥗 Sección de Recetas Fitness:** Espacio limpio y visual estructurado mediante tarjetas para destacar comidas saludables, organizadas por categorías y macros.
+* **✍️ Blog de Divulgación Científica:** Módulo de artículos para potenciar la marca personal compartiendo trucos de mentalidad, mitos de nutrición y rutinas de ejercicio.
+* **📅 Sistema Call-to-Action (CTA):** Enlaces directos distribuidos estratégicamente para captar clientes potenciales y redirigirlos hacia pasarelas de reservas (Calendly o WhatsApp).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🎨 Paleta de Colores Oficial
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+El diseño visual ha sido extraído de la identidad de marca, configurado mediante variables CSS globales:
 
-```bash
-ng generate --help
-```
+| Elemento | Código Hexadecimal | Muestra Visual |
+| :--- | :--- | :--- |
+| **Fondo Global** | `#F5F1EB` | Beis Suave |
+| **Fondo Bloques/Tarjetas** | `#F8F6F1` | Crema Claro |
+| **Color Secundario / Detalles** | `#E6D1D1` | Rosa Pastel |
+| **Texto / Contrastes** | `#1A1A1A` | Negro Carbón |
 
-## Building
+---
 
-To build the project run:
+## 📂 Estructura del Proyecto
 
-```bash
-ng build
-```
+La arquitectura sigue una organización modular limpia, separando las responsabilidades de la interfaz:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```text
+src/
+└── app/
+    ├── app.ts                  # Componente raíz u orquestador global
+    ├── app.html                # Esqueleto estructural (Layout)
+    ├── app.css                 # Variables y maquetación global (Beis/Rosa)
+    └── components/
+        ├── tiktok-carrusel/    # Componente del Carrusel con filtro SafeHtml
+        ├── recetas/            # Componente de la cuadrícula de recetas
+        └── blog/               # Componente del feed de artículos
