@@ -1,16 +1,25 @@
 <section class="recipes-section" id="recetas">
-  <h2>Recetas Saludables & Deliciosas</h2>
-  <p>Comer bien sin complicaciones alimentarias. Calculadas por macros nutricionales.</p>
+  <h2>Recetas Saludables & Nutritivas</h2>
+  <p class="section-subtitle">Alimentación flexible estructurada para potenciar tu rendimiento sin pasar hambre.</p>
+
+  <div class="filter-tabs">
+    <button [class.active]="categoriaActiva === 'todos'" (click)="cambiarFiltro('todos')">Ver Todas</button>
+    <button [class.active]="categoriaActiva === 'desayuno'" (click)="cambiarFiltro('desayuno')">Desayunos</button>
+    <button [class.active]="categoriaActiva === 'almuerzo'" (click)="cambiarFiltro('almuerzo')">Almuerzos</button>
+    <button [class.active]="categoriaActiva === 'cena'" (click)="cambiarFiltro('cena')">Cenas</button>
+  </div>
   
   <div class="grid-container">
-    @for (recipe of recipes; track recipe.title) {
-      <div class="card">
-        <img [src]="recipe.image" [alt]="recipe.title">
+    @for (recipe of recetasFiltradas; track recipe.title) {
+      <div class="card animate-card">
+        <div class="card-img-wrapper">
+          <img [src]="recipe.image" [alt]="recipe.title">
+          <span class="tag">{{ recipe.categoryLabel }}</span>
+        </div>
         <div class="card-content">
-          <span class="tag">{{ recipe.category }}</span>
           <h3>{{ recipe.title }}</h3>
           <p>{{ recipe.description }}</p>
-          <button class="link-more" (click)="verDetalle(recipe.title)">Ver receta completa &rarr;</button>
+          <button class="link-more">Ver Receta Paso a Paso &rarr;</button>
         </div>
       </div>
     }

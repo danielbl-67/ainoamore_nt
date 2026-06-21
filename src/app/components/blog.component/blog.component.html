@@ -1,17 +1,19 @@
 <section class="blog-section" id="blog">
-  <h2>Últimos Artículos del Blog</h2>
-  <p>Aprende sobre la ciencia del entrenamiento, nutrición y hábitos saludables.</p>
+  <h2>Artículos Científicos & Hábitos</h2>
+  <p class="section-subtitle">Divulgación basada en evidencia para expandir tus conocimientos sobre alimentación y salud.</p>
   
   <div class="grid-container">
     @for (post of blogPosts; track post.id) {
       <article class="card">
-        <img [src]="post.imagen" [alt]="post.titulo">
+        <div class="card-img-wrapper">
+          <img [src]="post.imagen" [alt]="post.titulo">
+          <span class="tag">{{ post.categoria }}</span>
+        </div>
         <div class="card-content">
-          <span class="tag-categoria">{{ post.categoria }}</span>
-          <div style="margin-top: 0.8rem;"><span class="date">{{ post.fecha }}</span></div>
+          <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem; display: block;">{{ post.fecha }}</span>
           <h3>{{ post.titulo }}</h3>
           <p>{{ post.extracto }}</p>
-          <button class="link-more" (click)="leerArticulo(post.id)">Leer artículo completo &rarr;</button>
+          <button class="link-more">Leer Artículo Completo &rarr;</button>
         </div>
       </article>
     }

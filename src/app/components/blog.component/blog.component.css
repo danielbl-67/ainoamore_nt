@@ -7,6 +7,19 @@
   margin: 0 auto;
 }
 
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-subtitle{
+  text-align: center;
+  font-size: 1.25rem;
+  opacity: 0.75;
+  margin-bottom: 3rem;
+}
 /* LA TARJETA DEL ARTÍCULO */
 .card {
   background: var(--color-tarjeta, #F8F6F1); /* Color crema suave */
@@ -53,10 +66,10 @@
 
 /* CUERPO DEL CONTENIDO */
 .card-content {
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 2;
 }
 
 .date {

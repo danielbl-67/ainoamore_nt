@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 
-
 @Component({
   selector: 'app-blog',
   standalone: true,
@@ -9,31 +8,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent {
-  
-  // Artículos informativos del perfil clínico/deportivo
+
+
   blogPosts = [
     {
       id: 1,
-      titulo: 'Mitos del cardio en ayunas: ¿Realidad o marketing?',
-      categoria: 'Entrenamiento',
+      titulo: 'Mitos del cardio en ayunas: ¿Es superior para perder grasa?',
       fecha: '18 Jun, 2026',
-      extracto: 'Analizamos la evidencia científica actual detrás de la quema de grasa a primera hora de la mañana.',
-      imagen: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=500'
+      categoria: 'Ciencia Deportiva',
+      extracto: 'Desmentimos la creencia popular analizando la evidencia científica real detrás de la oxidación de lípidos a primera hora.',
+      imagen: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=400'
     },
     {
       id: 2,
-      titulo: 'Cómo calcular tus macronutrientes sin obsesionarte',
+      titulo: 'La importancia crítica del NEAT en tu déficit calórico',
+      fecha: '14 Jun, 2026',
       categoria: 'Nutrición',
-      fecha: '12 Jun, 2026',
-      extracto: 'Una guía paso a paso para aprender a distribuir tus macros de forma flexible.',
-      imagen: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=500'
+      extracto: 'Descubre por qué la actividad diaria no asociada al ejercicio físico es tu mejor aliada para acelerar resultados.',
+      imagen: 'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?q=80&w=400'
     }
   ];
-
-  /**
-   * Carga el enrutamiento hacia la lectura completa de un post
-   */
-  leerArticulo(id: number) {
-    console.log(`Abriendo post informativo: ${id}`);
-  }
+  
 }

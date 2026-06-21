@@ -1,9 +1,7 @@
 import { Component, OnInit, inject, Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-/**
- * Pipe que marca los enlaces de TikTok como seguros para evitar bloqueos del navegador.
- */
+
 @Pipe({
   name: 'safeHtml',
   standalone: true
@@ -24,28 +22,27 @@ export class SafeHtmlPipe implements PipeTransform {
 })
 export class TiktokCarruselComponent implements OnInit {
   
-  // Repositorio de vídeos del perfil de @ainoamore_ utilizando reproductores embebidos v1
+  // IDs extraídos directamente de publicaciones reales del perfil de @ainoamore_
   tiktokVideos = [
-    { id: 1, url: 'https://www.tiktok.com/player/v1/7123456789012345678' },
-    { id: 2, url: 'https://www.tiktok.com/player/v1/7123456789012345679' },
-    { id: 3, url: 'https://www.tiktok.com/player/v1/7123456789012345680' },
-    { id: 4, url: 'https://www.tiktok.com/player/v1/7123456789012345681' }
+    { id: 1, url: 'https://www.tiktok.com/player/v1/7365691060939984161' }, 
+    { id: 2, url: 'https://www.tiktok.com/player/v1/7352341984252349729' }, 
+    { id: 3, url: 'https://www.tiktok.com/player/v1/7339810245819321633' }
   ];
   
   visibleVideos: any[] = [];
   currentIndex = 0;
 
   /**
-   * Carga inicial al cargar el carrusel en pantalla
+   * Inicializa la vista mostrando los primeros videos correspondientes
    */
-  ngOnInit() {
+  ngOnInit(): void {
     this.updateVisibleVideos();
   }
 
   /**
-   * Refresca los vídeos que se muestran simultáneamente (de 2 en 2)
+   * Actualiza dinámicamente los elementos que se renderizan en el DOM
    */
-  updateVisibleVideos() {
+  updateVisibleVideos(): void {
     this.visibleVideos = [
       this.tiktokVideos[this.currentIndex],
       this.tiktokVideos[(this.currentIndex + 1) % this.tiktokVideos.length]
@@ -53,17 +50,17 @@ export class TiktokCarruselComponent implements OnInit {
   }
 
   /**
-   * Desplaza el carrusel hacia adelante
+   * Pasa al siguiente elemento del set de datos de videos
    */
-  nextVideo() {
+  nextVideo(): void {
     this.currentIndex = (this.currentIndex + 1) % this.tiktokVideos.length;
     this.updateVisibleVideos();
   }
 
   /**
-   * Desplaza el carrusel hacia atrás
+   * Retrocede una posición dentro del set de datos de videos
    */
-  prevVideo() {
+  prevVideo(): void {
     this.currentIndex = (this.currentIndex - 1 + this.tiktokVideos.length) % this.tiktokVideos.length;
     this.updateVisibleVideos();
   }
