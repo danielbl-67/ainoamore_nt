@@ -19,7 +19,7 @@ export class BookingComponent implements OnInit {
   precios: { [key: string]: number } = {
     'nutricion': 50,
     'entrenamiento': 45,
-    'premium': 75
+    'premium': 80
   };
 
   razonSeleccionada = 'nutricion';
