@@ -7,10 +7,11 @@
       <article class="card">
         <div class="card-img-wrapper">
           <img [src]="post.imagen" [alt]="post.titulo">
-          <span class="tag">{{ post.categoria }}</span>
+          <span class="tag-blog">{{ post.categoria }}</span>
         </div>
+        
         <div class="card-content">
-          <span style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0.5rem; display: block;">{{ post.fecha }}</span>
+          <span class="date-text">{{ post.fecha }}</span>
           <h3>{{ post.titulo }}</h3>
           <p>{{ post.extracto }}</p>
           <button class="link-more">Leer Artículo Completo &rarr;</button>

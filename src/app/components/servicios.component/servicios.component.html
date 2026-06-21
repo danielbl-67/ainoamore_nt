@@ -1,0 +1,25 @@
+<section class="services-section" id="servicios">
+  <h2>Elige tu Plan de Transformación</h2>
+  <p class="section-subtitle">Programas adaptados a tus necesidades individuales con soporte continuo.</p>
+  
+  <div class="services-grid">
+    @for (service of services; track service.title) {
+      <div class="service-card" [class.featured]="service.highlight">
+        @if (service.highlight) {
+          <span class="featured-badge">Más Recomendado</span>
+        }
+        <h3>{{ service.title }}</h3>
+        <div class="price">{{ service.price }}</div>
+        <p>{{ service.description }}</p>
+        
+        <ul class="features-list">
+          @for (feat of service.features; track feat) {
+            <li><span>✓</span> {{ feat }}</li>
+          }
+        </ul>
+        
+        <button class="btn-service" (click)="contratar(service.title)">Empezar Cambio</button>
+      </div>
+    }
+  </div>
+</section>

@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Variables de color de la marca Ainoa More */
+:root {
+  --color-bg: #EFEAE2;          /* Beige Lino Tostado de Fondo */
+  --color-surface: #F5EFE6;     /* Beige claro limpio para Tarjetas */
+  --color-primary: #E3C4C1;     /* Rosa Pastel Maquillaje */
+  --color-primary-hover: #D5B2AF; 
+  --color-text-main: #1F1E1D;   /* Texto principal oscuro */
+  --color-text-muted: #54504D;  /* Texto secundario */
+  --font-main: 'Plus Jakarta Sans', sans-serif; /* Sigue funcionando porque ya está en index.html */
+}
+
+/* Configuración base del cuerpo de la web */
+body {
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+footer{
+  text-align: center;
+  font-size: 12px;
+  background-color: var(--color-primary-hover);
+  margin: 2px;
+  padding: 5px;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}

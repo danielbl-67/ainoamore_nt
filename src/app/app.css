@@ -1,15 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
-:root {
-  --color-bg: #EFEAE2;          /* Beige Lino Tostado (Más oscuro y profundo) */
-  --color-surface: #F5EFE6;     /* Blanco roto/crema oscuro para las tarjetas */
-  --color-primary: #E3C4C1;     /* Rosa Arcilla/Maquillaje empolvado (Más oscuro) */
-  --color-primary-hover: #D5B2AF; 
-  --color-text-main: #1F1E1D;   /* Marrón casi negro para un contraste perfecto */
-  --color-text-muted: #54504D;  /* Gris/Marrón ceniza para textos secundarios */
-  --font-main: 'Plus Jakarta Sans', sans-serif;
-}
-
+/* ==========================================================================
+   RESET & ESTILOS BASE (Compatibilidad Móvil/PC)
+   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,19 +8,23 @@
   font-family: var(--font-main);
   color: var(--color-text-main);
   scroll-behavior: smooth;
+  /* Eliminado el background-color global de aquí para que no rompa tus tarjetas */
 }
 
-body {
-  background-color: var(--color-bg);
+img, iframe {
+  max-width: 100%;
+  display: block;
 }
 
-/* NAVBAR MODERNA Y FLOTANTE */
+/* ==========================================================================
+   NAVBAR (Menú Premium)
+   ========================================================================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 8%;
-  background-color: rgba(239, 234, 226, 0.85); /* Sincronizado con el nuevo fondo */
+  background-color: rgba(239, 234, 226, 0.85); /* Sincronizado con el fondo lino */
   backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
@@ -38,25 +33,27 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  letter-spacing: -0.5px;
-}
-.logoft{
-  width: 100px;
-  height: auto;
+  letter-spacing: -0.3px;
 }
 
 .logo span {
-  color: var(--color-text-muted);
   font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
   text-decoration: none;
-  margin: 0 1.5rem;
+  margin: 0 1.2rem;
   font-weight: 500;
   color: var(--color-text-muted);
+  font-size: 0.95rem;
   transition: color 0.25s ease;
 }
 
@@ -64,16 +61,20 @@ nav a:hover {
   color: var(--color-text-main);
 }
 
-/* BOTÓN DE CONVERSIÓN PREMIUM */
+/* ==========================================================================
+   BOTONES E INTERACCIONES
+   ========================================================================== */
 .btn-primary {
   background-color: var(--color-primary);
   border: 1px solid rgba(31, 30, 29, 0.1);
-  padding: 0.8rem 2rem;
+  padding: 0.7rem 1.6rem;
   border-radius: 100px;
   font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(227, 196, 193, 0.4);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 .btn-primary:hover {
@@ -82,69 +83,336 @@ nav a:hover {
   box-shadow: 0 6px 20px rgba(227, 196, 193, 0.6);
 }
 
-/* HERO SECTION ASIMÉTRICA */
+/* ==========================================================================
+   HERO SECTION 
+   ========================================================================== */
 .hero {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 8rem 8% 6rem 8%;
-  gap: 5rem;
-}
-
-.hero-content h1 {
-  font-size: 3.8rem;
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  margin-bottom: 1.5rem;
-
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  margin-bottom: 2.5rem;
+  text-align: center;
+  padding: 5rem 6% 4rem 6%;
+  background: linear-gradient(180deg, rgba(227,196,193,0.15) 0%, rgba(239,234,226,0) 100%);
 }
 
 .hero-image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 1.5rem;
 }
 
 .image-placeholder {
   width: 100%;
-  height: 520px;
-  background-color: var(--color-primary);
-  border-radius: 32px;
-  box-shadow: 0 30px 60px rgba(31, 30, 29, 0.08);
-  background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600');
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  background-image: url('../../public/ainoamore_nt_logo.jpg');
   background-size: cover;
   background-position: center;
+  border: 3px solid #fff;
 }
 
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.05rem;
+  max-width: 540px; /* Reducimos ligeramente de 600px a 540px para equilibrar las líneas */
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 auto 2.5rem auto; /* Centra el bloque de texto horizontalmente y añade margen abajo */
+  text-wrap: balance; /* Estilo moderno: distribuye el texto de forma equilibrada automáticamente */
+}
+/* ==========================================================================
+   ESTILOS DE SECCIÓN COMUNES
+   ========================================================================== */
 section {
-  padding: 7rem 8%;
+  padding: 5rem 8%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Forza a que todo el contenido directo de las secciones se centre */
 }
 
 section h2 {
-  font-size: 2.6rem;
-  text-align: center;
+  font-size: 2.4rem;
+  text-align: center; /* Centra el texto del título */
   letter-spacing: -0.5px;
   margin-bottom: 0.8rem;
-
+  font-weight: 700;
+  width: 100%;
 }
 
-section .section-subtitle {
-  text-align: center;
+section .section-subtitle,
+section p:first-of-type {
+  text-align: center; /* Centra los subtítulos o descripciones cortas bajo el título */
   color: var(--color-text-muted);
   font-size: 1.1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
+  max-width: 650px; /* Evita que el subtítulo se estire demasiado en pantallas de PC */
+  text-wrap: balance; /* Equilibra los saltos de línea de los subtítulos */
+}
+/* ==========================================================================
+   ENCAPSULACIÓN PROFUNDA (Estilos Forzados de los Subcomponentes)
+   ========================================================================== */
+.services-section {
+  text-align: center;
 }
 
+/* Forzar que el grid de servicios no herede el centrado de flexbox del padre */
+::ng-deep .services-grid, 
+::ng-deep .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  width: 100%; /* Asegura que ocupe todo su espacio asignado */
+  margin: 0 auto;
+  text-align: left; /* Restaura la lectura del contenido de las tarjetas a la izquierda */
+}
+
+/* Tarjetas unificadas en tono beige lino claro */
+::ng-deep .card, 
+::ng-deep .service-card {
+  background-color: var(--color-surface) !important;
+  border-radius: 24px !important;
+  padding: 2.5rem 2rem !important;
+  border: 1px solid rgba(31, 30, 29, 0.06) !important;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+  box-shadow: 0 10px 30px rgba(31, 30, 29, 0.02) !important;
+}
+
+::ng-deep .card:hover, 
+::ng-deep .service-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(31, 30, 29, 0.05) !important;
+}
+
+::ng-deep .card img {
+  border-radius: 16px !important;
+  margin-bottom: 1rem;
+}
+
+/* Detalles y Tags en Rosa Pastel */
+::ng-deep .tag, 
+::ng-deep .tag-categoria,
+::ng-deep .featured-badge {
+  background-color: var(--color-primary) !important;
+  color: var(--color-text-main) !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 1.2rem !important;
+  border-radius: 100px !important;
+  font-size: 0.8rem !important;
+  border: 1px solid rgba(31, 30, 29, 0.05) !important;
+}
+
+::ng-deep .featured-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Tarjeta destacada de servicios (Rosa Pastel a juego) */
+::ng-deep .service-card.featured {
+  background-color: #EADCDA !important; 
+  border: 2px solid var(--color-primary) !important;
+}
+
+::ng-deep .features-list {
+  list-style: none;
+  margin: 1.5rem 0 2.5rem 0;
+  flex-grow: 1;
+}
+
+::ng-deep .features-list li {
+  font-size: 0.98rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+::ng-deep .btn-service,
+::ng-deep .link-more {
+  background: transparent !important;
+  border: 2px solid var(--color-text-main) !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: all 0.25s ease !important;
+  text-decoration: none !important;
+}
+
+::ng-deep .service-card.featured .btn-service {
+  background-color: var(--color-text-main) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+::ng-deep .btn-service:hover,
+::ng-deep .link-more:hover {
+  background-color: var(--color-text-main) !important;
+  color: #fff !important;
+}
+
+/* ==========================================================================
+   DESPLEGABLE DE PREGUNTAS FRECUENTES (FAQs)
+   ========================================================================== */
+::ng-deep .faq-container {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+::ng-deep .faq-item {
+  background-color: var(--color-surface) !important;
+  border-radius: 20px !important;
+  padding: 1.5rem 2rem !important;
+  cursor: pointer;
+  border: 1px solid rgba(31, 30, 29, 0.05) !important;
+  transition: all 0.25s ease;
+}
+
+::ng-deep .faq-item:hover {
+  background-color: #EADCDA !important; /* Rosa pastel suave al interactuar */
+}
+
+::ng-deep .faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+::ng-deep .faq-header h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+::ng-deep .faq-header .icon {
+  background: rgba(31, 30, 29, 0.04);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .faq-item.open .icon {
+  background-color: var(--color-primary) !important;
+  transform: rotate(180deg);
+}
+
+::ng-deep .faq-body {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(31, 30, 29, 0.08);
+}
+
+::ng-deep .faq-body p {
+  color: var(--color-text-muted) !important;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Responsivo para Móviles)
+   ========================================================================== */
 @media (max-width: 992px) {
-  .hero { grid-template-columns: 1fr; text-align: center; gap: 3rem; padding-top: 4rem; }
-  .navbar { flex-direction: column; gap: 1.2rem; padding: 1.5rem; }
-  nav a { margin: 0 0.8rem; }
+  .navbar {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  
+  nav a {
+    margin: 0 0.5rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  ::ng-deep .services-grid, 
+  ::ng-deep .grid-container {
+    grid-template-columns: 1fr; /* Una columna fluida en teléfonos */
+    padding: 0 1rem;
+  }
+}
+/* ==========================================================================
+   CORRECCIÓN DEL CONTENEDOR DE IMAGEN Y TAG EN LAS TARJETAS
+   ========================================================================== */
+
+/* Hace que el contenedor sea el punto de referencia espacial */
+::ng-deep .card-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 16px; /* Bordes redondeados finos para la foto */
+  margin-bottom: 1.5rem;
+}
+
+::ng-deep .card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 0 !important; /* Eliminamos el margen inferior antiguo de la imagen */
+}
+
+/* Nueva clase específica para la etiqueta del Blog */
+::ng-deep .tag-blog {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(245, 239, 230, 0.9) !important; /* Cristal blanquecino estético */
+  backdrop-filter: blur(8px);
+  color: var(--color-text-main) !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 1.2rem !important;
+  border-radius: 100px !important;
+  font-size: 0.8rem !important;
+  white-space: nowrap; /* 🔥 EVITA que el texto se rompa en dos líneas */
+  border: 1px solid rgba(31, 30, 29, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Ajuste del texto de la fecha */
+::ng-deep .date-text {
+  font-size: 0.85rem; 
+  color: var(--color-text-muted) !important; 
+  margin-bottom: 0.6rem; 
+  display: block;
+}
+
+/* Forzar que el botón de leer artículo mantenga la anchura adaptada y centrada */
+::ng-deep .card .link-more {
+  margin-top: auto; /* Empuja el botón al fondo de la tarjeta de forma simétrica */
 }

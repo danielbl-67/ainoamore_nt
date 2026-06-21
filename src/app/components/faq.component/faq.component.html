@@ -1,0 +1,20 @@
+<section class="faq-section" id="faq">
+  <h2>Preguntas Frecuentes</h2>
+  <p class="section-subtitle">Todo lo que necesitas saber antes de empezar tu asesoría.</p>
+  
+  <div class="faq-container">
+    @for (faq of faqs; track faq.question; let i = $index) {
+      <div class="faq-item" [class.open]="faq.open" (click)="toggle(i)">
+        <div class="faq-header">
+          <h4>{{ faq.question }}</h4>
+          <span class="icon">{{ faq.open ? '−' : '+' }}</span>
+        </div>
+        @if (faq.open) {
+          <div class="faq-body">
+            <p>{{ faq.answer }}</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</section>

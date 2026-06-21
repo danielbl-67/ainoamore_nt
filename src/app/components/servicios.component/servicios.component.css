@@ -1,0 +1,143 @@
+.services-section {
+  padding: 6rem 8%;
+  background: linear-gradient(180deg, rgba(227, 196, 193, 0.05) 0%, transparent 100%);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.service-card {
+  background-color: var(--color-surface);
+  border-radius: 28px;
+  padding: 3.5rem 2.5rem;
+  border: 1px solid rgba(42, 40, 39, 0.06);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(42, 40, 39, 0.04);
+}
+
+/* Tarjeta Destacada Premium (Rosa pastel empolvado) */
+.service-card.featured {
+  background-color: #EADCDA; /* Un tono rosa empolvado ligeramente más cálido */
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 15px 35px rgba(227, 196, 193, 0.2);
+}
+
+@media (min-width: 992px) {
+  .service-card.featured {
+    transform: scale(1.04);
+  }
+  .service-card.featured:hover {
+    transform: translateY(-6px) scale(1.04);
+  }
+}
+
+.featured-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-text-main);
+  color: #FFF6F5;
+  padding: 0.4rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.3px;
+}
+
+.service-card .price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-main);
+}
+
+.service-card p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.features-list {
+  list-style: none;
+  margin-bottom: 3rem;
+  flex-grow: 1;
+}
+
+.features-list li {
+  font-size: 0.98rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-main);
+}
+
+.features-list li span {
+  color: var(--color-text-muted);
+  font-weight: bold;
+}
+
+.btn-service {
+  background-color: transparent;
+  border: 2px solid var(--color-text-main);
+  padding: 0.9rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.service-card.featured .btn-service {
+  background-color: var(--color-text-main);
+  color: #FFF6F5;
+  border: none;
+}
+
+.btn-service:hover {
+  background-color: var(--color-text-main);
+  color: #FFF6F5;
+  transform: translateY(-1px);
+}
+
+.service-card.featured .btn-service:hover {
+  opacity: 0.9;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-subtitle{
+  text-align: center;
+  font-size: 1.25rem;
+  opacity: 0.75;
+  margin-bottom: 3rem;
+}

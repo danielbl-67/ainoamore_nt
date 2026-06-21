@@ -2,21 +2,18 @@
   <h2>Comunidad & Tips Diarios</h2>
   <p class="section-subtitle">Mantente al día con rutinas rápidas y consejos nutricionales directamente desde mis redes sociales.</p>
   
-  <div class="carousel-container">
-    <button class="carousel-btn prev" (click)="prevVideo()" aria-label="Anterior">&#10094;</button>
-    
-    <div class="carousel-track">
-      @for (video of visibleVideos; track video.id) {
-        <div class="tiktok-card">
-          <iframe [src]="video.url | safeHtml" class="tiktok-embed" allowfullscreen></iframe>
-        </div>
-      }
-    </div>
-
-    <button class="carousel-btn next" (click)="nextVideo()" aria-label="Siguiente">&#10095;</button>
+  <div class="tiktok-container">
+    <iframe [src]="urlPerfilSegura" 
+            class="tiktok-profile-embed"
+            allowfullscreen 
+            scrolling="no"
+            allow="encrypted-media;">
+    </iframe>
   </div>
 
-  <div style="text-align: center; margin-top: 3rem;">
-    <a href="https://www.tiktok.com/@ainoamore_" target="_blank" class="btn-secondary"> Seguir en TikTok @ainoamore_</a>
+  <div class="button-wrapper">
+    <a href="https://www.tiktok.com/@ainoamore_" target="_blank" class="btn-secondary">
+      Seguir en TikTok @ainoamore_
+    </a>
   </div>
 </section>
