@@ -7,6 +7,7 @@ import { BlogComponent } from './components/blog.component/blog.component';
 // NUEVOS IMPORTS:
 import { ServiciosComponent } from './components/servicios.component/servicios.component';
 import { FaqComponent } from './components/faq.component/faq.component';
+import { BookingComponent } from './components/booking.component/booking.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ import { FaqComponent } from './components/faq.component/faq.component';
     RecetasComponent, 
     BlogComponent,
     ServiciosComponent, 
-    FaqComponent
+    FaqComponent,
+    BookingComponent
   ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']

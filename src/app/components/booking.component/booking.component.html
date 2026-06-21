@@ -1,0 +1,74 @@
+<section class="booking-section" id="agendar">
+  <h2>Reserva tu Sesión Privada</h2>
+  <p class="section-subtitle">Gestiona tu cita de forma sencilla. Verás el resumen y el precio antes de confirmar.</p>
+
+  <div class="booking-grid">
+    
+    <div class="form-container">
+      <div class="row-inputs">
+        <div class="input-block">
+          <label>Nombre Completo</label>
+          <input type="text" [(ngModel)]="nombreCliente" placeholder="Ej: María García">
+        </div>
+
+        <div class="input-block">
+          <label>Correo Electrónico</label>
+          <input type="email" [(ngModel)]="emailCliente" placeholder="Ej: maria@correo.com">
+        </div>
+      </div>
+
+      <div class="input-block">
+        <label>Especialidad Requerida</label>
+        <select [(ngModel)]="razonSeleccionada" (change)="cambiarServicio()">
+          <option value="nutricion">Asesoría Nutricional</option>
+          <option value="entrenamiento">Entrenamiento Personal</option>
+          <option value="premium">Pack Full Premium</option>
+        </select>
+      </div>
+
+      <div class="row-inputs">
+        <div class="input-block">
+          <label>Día de la Cita</label>
+          <input type="date" [(ngModel)]="fechaSeleccionada" (ngModelChange)="validarFecha()">
+        </div>
+
+        <div class="input-block">
+          <label>Hora Disponible (Tramos de 1h)</label>
+          <select [(ngModel)]="horaSeleccionada" [disabled]="!fechaSeleccionada || horasFiltradas.length === 0">
+            @for (hora of horasFiltradas; track hora) {
+              <option [value]="hora">{{ hora }} h</option>
+            } @empty {
+              <option value="">Selecciona un día válido...</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      @if (errorMensaje) {
+        <div class="alert-box">{{ errorMensaje }}</div>
+      }
+    </div>
+
+    <div class="summary-box">
+      <h3>Resumen de Reserva</h3>
+      <div class="summary-content">
+        <div class="item"><span>Cliente:</span> <strong>{{ nombreCliente || '---' }}</strong></div>
+        <div class="item"><span>Especialidad:</span> <strong>{{ razonSeleccionada | titlecase }}</strong></div>
+        <div class="item"><span>Fecha:</span> <strong>{{ fechaSeleccionada || '---' }}</strong></div>
+        <div class="item"><span>Hora elegida:</span> <strong>{{ horaSeleccionada ? horaSeleccionada + 'h' : '---' }}</strong></div>
+      </div>
+      
+      <div class="total-section">
+        <span>Precio de la Sesión</span>
+        <span class="price-tag">{{ costeActual }}€</span>
+      </div>
+
+      <button class="confirm-btn" 
+              [disabled]="!fechaSeleccionada || !horaSeleccionada || !nombreCliente || !emailCliente" 
+              (click)="confirmarReserva()">
+        Confirmar Reserva Plaza
+      </button>
+    </div>
+
+  </div>
+</section>
