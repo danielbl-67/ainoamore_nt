@@ -1,10 +1,10 @@
 /* VARIABLES CON TU PALETA EXTRACTADA */
 :root {
-  --color-fondo: #F5F1EB;       /* Beis de fondo */
+  --color-fondo: #e9ce9d;       /* Beis de fondo */
   --color-texto: #1A1A1A;       /* Primer plano / Texto oscuro */
-  --color-tarjeta: #F8F6F1;     /* Fondo de bloques y tarjetas */
-  --color-rosa: #E6D1D1;        /* Color secundario / Rosa Maquillaje */
-  --color-rosa-dark: #D4BDBD;   /* Rosa para efectos al pasar el ratón */
+  --color-tarjeta: #fcefd0;     /* Fondo de bloques y tarjetas */
+  --color-rosa: #fddada;        /* Color secundario / Rosa Maquillaje */
+  --color-rosa-dark: #b89999;   /* Rosa para efectos al pasar el ratón */
 }
 
 * {
@@ -25,7 +25,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 5%;
-  background-color: rgba(245, 241, 235, 0.85);
+  background-color: rgba(255, 180, 180, 0.85);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
